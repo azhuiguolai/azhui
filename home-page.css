@@ -1,0 +1,661 @@
+
+/* #region 整体样式 */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 20px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.rightfix {
+  float: right;
+}
+.leftfix {
+  float: left;
+}
+/* #endregion  */
+
+/* ----------------------------------------------------------- */
+
+/* index-1 */
+
+/* #region 头部标题和导航 */
+.topbar {
+  width: 100vw;
+  height: 15vh;
+  background-color: rgba(0, 0, 0, .3);
+
+  /* background-color: skyblue; */
+  position:fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  color: white;
+  box-shadow: 0 0 15px black;
+}
+
+.top-title {
+  display: flex;
+  justify-content:space-between;
+  height: 10vh;
+  line-height: 10vh;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+}
+
+.title-left {
+  margin-left: 100px;
+}
+
+.title-right {
+  margin-right: 100px;
+}
+
+.shell {
+  display: flex;
+  justify-content: center;
+}
+.top-nav-shell a {
+  color: white;
+}
+.button {
+  /* background-color: #55a0ff; */
+  width: 170px;
+  height: 5vh;
+  margin: 0 70px;
+  text-align: center;
+  line-height: 5vh;
+  cursor: pointer;
+  transition: .3s;
+}
+.button:hover {
+  background-color:rgba(0, 0, 0, .3);
+}
+.button:hover a {
+  color: red;
+}
+.button li {
+  background-color:rgba(0, 0, 0, .3);
+  height: 0;
+  transition: .3s;
+  transform: translateY(-5vh);
+  opacity: 0;
+}
+.button:hover li{
+  height: 5vh;
+  transform: translateY(0);
+  opacity: 1;
+  z-index: -999;
+}
+
+.button li:hover {
+  /* background-color: rgba(0, 0, 0, .5) */
+  color: red;
+}
+
+/* #endregion 头部标题和导航 */
+
+/* #region 轮播图 */
+.index-1 {
+  position: relative;
+}
+.swiper {
+  width: 100vw;
+  height: 100vh;
+  /* z-index: -1; */
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* #endregion */
+
+/* ----------------------------------------------------------- */
+
+/* #region index-2*/
+.index-2 {
+  width: 100vw;
+  height: 100vh;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90vw;
+  height: 85vh;
+  margin: 0 auto;
+  background-color: pink;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container .box {
+  width: 28vw;
+  height: 70vh;
+  background-color: orange;
+  border: 3px dashed black;
+}
+
+.container .box .title {
+  width: 80%;
+  height: 10%;
+  background-color: khaki;  
+  margin: 12px auto 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box .title span {
+  font-size: 40px;
+}
+.box .video-page {
+  width: 80%;
+  height: 35%;
+  background-color: aquamarine;
+  margin: 10px auto;
+}
+.box1 .arts {
+  width: 80%;
+  height: 45%;
+  background-color: aquamarine;
+  margin: 35px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.box1 .article {
+  width: 100%;
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+}
+.box2 .arts {
+  width: 80%;
+  height: 80%;
+  background-color: skyblue;
+  margin: 20px auto 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.box2 .article {
+  padding-bottom: 40px;
+  border-bottom: 2px dashed black;
+}
+
+.box3 .arts {
+  width: 80%;
+  height: 45%;
+  background-color: aquamarine;
+  margin: 10px auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* 三个小盒子的动画效果 */
+
+.idx2-box1-flag {
+  position: relative;
+  left: -25vw;
+  transition: 1s;
+}
+.idx2-box1-active {
+  left: 0vw;
+}
+.idx2-box3-flag {
+  position: relative;
+  left: 25vw;
+  transition: 1s;
+}
+.idx2-box3-active {
+  left: 0vw;
+}
+
+/* #endregion index-2 */
+/* ------------------------------------------------------------ */
+
+/* #region index-3 */
+.index-3 {
+  width: 100vw;
+  height: 100vh;
+  background-color:bisque;
+  position: relative;
+}
+.index-3 .box {
+  width: 33%;
+  height: 33%;
+  background-color: pink;
+}
+.index-3 .box1 {
+  text-align: left;
+  position: absolute;
+  bottom: 5vh;
+  left: 5vw;
+
+}
+.index-3 .box2 {
+  text-align: right;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  & p {
+    text-align: left;
+  }
+}
+
+/* box1的动画效果 */
+.box1-flag {
+  opacity: 0;
+  filter: blur(15px);
+  transition: all 1.5s;
+  transform: translateX(-100%);
+}
+.box1-active {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+/* box2的动画效果 */
+.box2-flag {
+  opacity: 0;
+  filter: blur(15px);
+  transition: all 1.5s;
+  transform: translateX(100%);
+}
+.box2-active {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+
+/* #endregion */
+/* ------------------------------------------------------------ */
+
+/* #region index-4 */
+.index-4 {
+  width: 100vw;
+  height: 100vh;
+  text-align: left;
+}
+.index-4 .title {
+  width: 16vw;
+  height: 100vh;
+  background-color:bisque;
+}
+.index-4 .container{
+  width: 84vw;
+  height: 100vh;
+  background-color: skyblue;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+    .item {
+    list-style: none;
+    height: 100vh;
+    transition: width 0.5s;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(:hover) {
+      width: 20%;
+    }
+    &:hover {
+      width: 850px;
+      &::after {
+        opacity: 1;
+      }
+    }
+    
+  }
+}
+
+/* #endregion */
+/* ------------------------------------------------------------ */
+/* #region index-5 */
+.index-5 {
+  width: 100vw;
+  height: 100vh;
+  background-color:#eaeaea;
+}
+
+.index-5 .container {
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #f5f5f5;
+  padding: 50px;
+  /* filter: blur(5px); */
+  /* box-shadow: 0 30px 50px black; */
+}
+.index-5 .container-flag {
+  transition: all 1.3s;
+}
+.index-5 .container-active {
+  box-shadow: 0 30px 50px black;
+}
+#slide {
+  width: max-content;
+  margin-top: 50px;
+}
+
+.index-5 .item {
+  width: 25%;
+  height: 60%;
+  background-position: 50%, 50%;
+  display: inline-block;
+  background-size: cover;
+  position: absolute;
+  /* 垂直居中 */
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 20px;
+  box-shadow: 0 30px 50px #505050;
+  transition: .7s;
+}
+.index-5 .item:nth-child(1),
+.index-5 .item:nth-child(2) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(0);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.index-5 .item:nth-child(3) {
+  left: 60%;
+}
+.index-5 .item:nth-child(4) {
+  left: calc(60% + 20%);
+}
+.index-5 .item:nth-child(5) {
+  left: calc(60% + 40%);
+}
+.index-5 .item:nth-child(n+6) {
+  left: calc(60% + 60%);
+  opacity: 0;
+}
+
+/* 文字内容的布局 */
+.index-5 .item .content {
+  width: 30vw;
+  text-align: left;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: system-ui;
+  color: #eee;
+  display: none;
+  z-index: 2;
+}
+
+.index-5 .item:nth-child(2) .content{
+  display: block;
+}
+
+.index-5 .item .name {
+  font-size: 55px;
+  font-weight: bold;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out 1 forwards;
+}
+
+.index-5 .item .des {
+  font-size: 20px;
+  margin:20px 0;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out .3s 1 forwards;
+}
+
+/* 按钮 */
+.index-5 .item button {
+  font-size: 20px;
+  padding: 10px 20px;
+  border: none;
+  opacity: 0;
+  animation: showcontent 1s ease-in-out .6s 1 forwards;
+}
+.index-5 .item button:hover {
+  cursor: pointer;
+}
+
+@keyframes showcontent {
+  from{
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(20px);
+  }to{
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.index-5 .buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  margin-left: -50px;
+  text-align: center;
+
+}
+
+.index-5 .s_button {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: gray;
+  background-color: #f5f5f5;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid #505050;
+  margin: 0 50px;
+  transition: .3s;
+}
+.index-5 .s_button:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+/* #endregion */
+/* ------------------------------------------------------------ */
+
+/* #region index-6 */
+.index-6 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-6 .title {
+  width: 20vw;
+  height: 5vh;
+  background-color: skyblue;
+  font-size: 40px;
+  text-align: center;
+  margin: 5vh auto 0;
+}
+
+.index-6 .shell {
+  margin-top: 10vh;
+  position: relative;
+  min-width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* 设置3d变化 */
+  transform-style: preserve-3d;
+  /* 添加透视效果 */
+  perspective: 1000px;
+}
+
+.index-6 .shell .box {
+  position: relative;
+  width: 350px;
+  height: 450px;
+  transition: 0.3s;
+  overflow: hidden;
+  margin: 30px;
+  transform: rotateY(0deg);
+  transition-delay: .1s;
+  border-radius: 15px;
+  border: #fff 5px solid;
+
+  /* transform: rotateY(0deg) scale(1.1);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7); */
+}
+.idx6-box-flag {
+  transition:.3s;
+}
+.idx6-box-active {
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7);
+}
+
+
+/* 当鼠标所有卡片的父元素点shell上时，
+所有卡片像Y轴翻转20度 */
+.index-6 .shell:hover .box {
+  transform: rotateY(20deg);
+}
+
+/* 当鼠标悬浮在当前卡片上时，当前卡片的翻转角度为0，
+并放大一点二五倍，加个阴影 */
+.index-6 .shell .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7);
+  /* z-index: 1; */
+}
+
+/* 当鼠标悬浮在卡片上时，
+当前卡片后面的所有卡片全部都反向翻转负20度 */
+.index-6 .shell .box:hover~.box {
+  transform: rotateY(-20deg);
+}
+
+.index-6 .shell .box .images img {
+  width: 100%;
+}
+
+.index-6 .shell .box .content {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  z-index: 999;
+  padding: 15px;
+}
+
+.index-6 .shell .box .content h2 {
+  color: rgb(210, 140, 140);
+  transition: 0.3s;
+  font-size: 20px;
+  transform: translateY(-100px);
+}
+
+.index-6 .shell .box:hover .content h2 {
+  /* 上面文字内容设置了15px的padding，所以这里需要用-15px来抵消掉 */
+  transform: translateY(15px);
+}
+
+.index-6 .shell .box .content p {
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  font-size: 14px;
+  transform: translateY(600px);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.index-6.shell .box:hover .content p {
+  transform: translateY(240px);
+}
+
+.index-6 .split-line {
+  margin-top: 15vh;
+  width: 100vw;
+  height: 2px;
+  background-color: black;
+}
+
+.footer {
+  width: 50vw;
+  height: 20vh;
+  margin: 0 auto;
+  margin-top: 35px;
+  background-color: pink;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer-nav {
+  width: 100%;
+  background-color: orange;
+  margin: 0 auto;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.footer-nav a {
+  display: block;
+  padding:0 40px;
+  text-decoration: none;
+  border-right: 1px solid black;
+}
+
+.footer-nav li:last-child a {
+  border: 0;
+}
+
+.copyright {
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+/* #endregion*/
+/* ------------------------------------------------------------ */
+

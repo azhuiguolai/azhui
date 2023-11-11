@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./CSS/second-page.css">
+</head>
+<body>
+  <!-- 头部导航 -->
+  <div class="topbar">
+    <!-- 头部标题、搜索、二维码、时间 -->
+    <div class="top-title">
+      <!-- 左侧图标和标题 -->
+      <div class="title-left">
+        <img src="" alt="">
+        <span>传统文化网</span>
+      </div>
+
+      <!-- 右侧搜索、二维码和时间 -->
+      <div class="title-right">
+        <!-- 搜索框 -->
+        <div class="search">
+          <input type="text" class="flag">
+          <div class="button small-icon"></div>
+        </div>
+        <!-- 二维码 -->
+        <div class="qr-code">
+          <div class="qr-icon small-icon">
+            <div class="qr-img"></div>
+          </div>
+          
+        </div>
+        <!-- 微博 -->
+        <div class="wb small-icon">
+        </div>
+        <!-- 时间 -->
+        <div class="time">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <div class="top-nav-shell">
+    
+      <ul class="shell">
+        <li class="button">
+          <a href="">首页</a>
+        </li>
+        <li class="button">
+          <a href="">内一</a>
+          <ul>
+            <li>计算机科学</li>
+            <li>网络工程</li>
+            <li>软件工程</li>
+          </ul>
+        </li>
+        <li class="button">
+          <a href="">内二</a>
+          <ul>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+          </ul>
+        </li>
+        <li class="button">
+          <a href="">内三</a>
+          <ul>
+            <li>张三</li>
+            <li>李四</li>
+            <li>王五</li>
+          </ul>
+        </li>
+        <li class="button">
+          <a href="">内四</a>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+        <li class="button">
+          <a href="">不良人</a>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+
+  <!-- 头部导航动画内容，谨慎更改 -->
+  <script>
+    const search=document.querySelector('.title-right .search')
+    const button=document.querySelector('.title-right .button')
+    const input=document.querySelector('.title-right input')
+
+    // 当点击按钮时
+    button.addEventListener('click',()=>{
+      // 当点击按钮时，如果输入框没有显示，并且按钮没有变色，则按钮添加变色，显示输入框
+      if(!input.classList.contains('active') && !button.classList.contains('button-active')){
+        button.classList.add('button-active')
+        input.classList.add('active')
+        input.focus()
+      }
+      // 如果input框显示，且input中的内容为空，并且按钮处于激活状态，则提示输入不合法
+      else if(input.classList.contains('active') && input.value ==='' && button.classList.contains('button-active')){
+        alert('搜索内容不能为空')
+      }
+    })
+    // 当输入框失去焦点时
+    input.addEventListener('blur',()=>{
+      // 获取鼠标点击的对象
+      window.onclick=function(e){
+      var ele;
+      ele=document.elementFromPoint(e.clientX,e.clientY);
+      // 当鼠标点击的是按钮，且输入框内容不为空时，跳转页面
+      if(ele.classList.contains('button') && input.value !=='' && button.classList.contains('button-active')){
+        window.location.href='http://baidu.com'
+        input.value=''
+      }
+      //满足：1、失去焦点，且点击的是按钮；2、输入框内容为空;3、按钮处于激活状态；4、输入框处于激活状态；执行提醒。
+      
+      // 当输入框失去焦点时，让输入框不显示，按钮不激活
+      else if(!ele.classList.contains('button') && !ele.classList.contains('flag')){
+        // console.log(11);
+          input.classList.remove('active')
+          input.value=''
+          button.classList.remove('button-active')
+        }
+      }
+
+    })
+
+    function fixNum(num){
+      return num>10?num:'0'+num
+    }
+    function getTime(){
+      let now=new Date()
+      console.log(now);
+      let year=now.getFullYear()
+      let month=now.getMonth()+1
+      let day=fixNum(now.getDate())
+      // getDay是获取星期几，是数字
+      // let day=now.getDay();
+      // console.log(day);
+      let h=fixNum(now.getHours())
+      let m=fixNum(now.getMinutes())
+      let text=h>12?'pm':'am'
+      
+      let time=year+'-'+month+'-'+day+' '+h+':'+m+' '+text
+      document.querySelector('.title-right .time').innerHTML=time
+      setTimeout(getTime,1000)
+    }
+    window.addEventListener('load',getTime)
+ 
+  </script>
+</body>
+</html>
